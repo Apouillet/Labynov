@@ -40,9 +40,9 @@ namespace Labynov
                 this.obeissance = 0;
                 this.faim = 100;
             }
-            if (this.obeissance < 1)
+            if (this.obeissance < 0)
             {
-                this.obeissance = 1;
+                this.obeissance = 0;
             }
             if (this.vies == 0)
             {
