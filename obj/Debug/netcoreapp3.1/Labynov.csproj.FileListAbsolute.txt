@@ -1,0 +1,13 @@
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\obj\Debug\netcoreapp3.1\Labynov.csproj.CoreCompileInputs.cache
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\obj\Debug\netcoreapp3.1\Labynov.AssemblyInfoInputs.cache
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\obj\Debug\netcoreapp3.1\Labynov.AssemblyInfo.cs
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\obj\Debug\netcoreapp3.1\Labynov.csprojAssemblyReference.cache
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\bin\Debug\netcoreapp3.1\Labynov.exe
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\bin\Debug\netcoreapp3.1\Labynov.deps.json
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\bin\Debug\netcoreapp3.1\Labynov.runtimeconfig.json
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\bin\Debug\netcoreapp3.1\Labynov.runtimeconfig.dev.json
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\bin\Debug\netcoreapp3.1\Labynov.dll
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\bin\Debug\netcoreapp3.1\Labynov.pdb
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\obj\Debug\netcoreapp3.1\Labynov.dll
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\obj\Debug\netcoreapp3.1\Labynov.pdb
+E:\Documents\Exo_et_cours\B3Ynov\LabynovFolder\Labynov\obj\Debug\netcoreapp3.1\Labynov.genruntimeconfig.cache

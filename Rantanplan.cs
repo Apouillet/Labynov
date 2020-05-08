@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Labynov
 {
@@ -21,7 +19,7 @@ namespace Labynov
         public string choixRecordPied { get; set; }
         public int ptsRecordNourriture { get; set; }
         public string choixRecordNourriture { get; set; }
-        public Rantanplan(int x, int y , int vies , int faim, int obeissance) : base(x, y)
+        public Rantanplan(int x, int y, int vies, int faim, int obeissance) : base(x, y)
         {
             this.name = "Rantanplan";
             this.vies = vies;
@@ -30,9 +28,10 @@ namespace Labynov
             this.obeissance = obeissance;
             this.signe = "R";
         }
-        
+
         public bool perdreUneVieEtMeurt()
         {
+            Console.WriteLine("Kaï Kaï ! \n");
             this.vies -= 1;
             this.faim += (this.obeissance + this.faim) / (2 * this.viesMax);
             this.obeissance -= (this.obeissance + this.faim) / (2 * this.viesMax);
@@ -41,7 +40,11 @@ namespace Labynov
                 this.obeissance = 0;
                 this.faim = 100;
             }
-            if(this.vies == 0)
+            if (this.obeissance < 1)
+            {
+                this.obeissance = 1;
+            }
+            if (this.vies == 0)
             {
                 return true;
             }

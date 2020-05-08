@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labynov
 {
-   public class Map
+    public class Map
     {
         public int sizeY { get; set; }
 
@@ -53,7 +53,7 @@ namespace Labynov
             //Et El famoso Rantanplan
             this.creerRantanplan(50, 50, 3, 50, 50);
         }
-        public Map(int X, int Y, int viesRantanplan, int faimRantanplan, int obeissanceRantanplan )
+        public Map(int X, int Y, int viesRantanplan, int faimRantanplan, int obeissanceRantanplan)
         {//initialisation de la map de la taille demandé
             this.sizeY = Y;
             this.sizeX = X;
@@ -68,7 +68,7 @@ namespace Labynov
                 }
             }
             //On initialise le point de départ aux centre 
-            this.sousSol[((Y/2 * X) + X/2)].seLibere();
+            this.sousSol[((Y / 2 * X) + X / 2)].seLibere();
             //On fait descendre les méchants
             this.creerDaltons(X, Y);
             //On fait descendre Avrel
@@ -139,7 +139,7 @@ namespace Labynov
         public bool estLibreNord(int x, int y)
         {
             //On calcul l'index de la case dans le tableau et on vérifie pour la ligne d'au dessus .
-            int indexCalc = this.convertCoordonneeToIndex(x, y-1);
+            int indexCalc = this.convertCoordonneeToIndex(x, y - 1);
             if (this.estDansSousSol(indexCalc) && this.sousSol[indexCalc].estLibre())
             {
                 return true;
@@ -153,7 +153,7 @@ namespace Labynov
         public bool estLibreSud(int x, int y)
         {
             //On calcul l'index de la case dans le tableau et on vérifie pour la ligne d'en dessous .
-            int indexCalc = this.convertCoordonneeToIndex(x, y+1);
+            int indexCalc = this.convertCoordonneeToIndex(x, y + 1);
             if (this.estDansSousSol(indexCalc) && this.sousSol[indexCalc].estLibre())
             {
                 return true;
@@ -167,7 +167,7 @@ namespace Labynov
         public bool estLibreOuest(int x, int y)
         {
             //On calcul l'index de la case dans le tableau et on vérifie pour la case suivante .
-            int indexCalc = this.convertCoordonneeToIndex(x-1, y);
+            int indexCalc = this.convertCoordonneeToIndex(x - 1, y);
             if (this.estDansSousSol(indexCalc) && this.sousSol[indexCalc].estLibre())
             {
                 return true;
@@ -181,7 +181,7 @@ namespace Labynov
         public bool estLibreEst(int x, int y)
         {
             //On calcul l'index de la case dans le tableau et on vérifie pour la case précédente .
-            int indexCalc = this.convertCoordonneeToIndex(x+1, y);
+            int indexCalc = this.convertCoordonneeToIndex(x + 1, y);
             if (this.estDansSousSol(indexCalc) && this.sousSol[indexCalc].estLibre())
             {
                 return true;
@@ -276,7 +276,7 @@ namespace Labynov
             this.avrel.odeurDeCuisine = this.sizeX * this.sizeY;
             this.avrel.odeurDePied = this.sizeX * this.sizeY;
         }
-        public void creerDalton(int x , int y, string name)
+        public void creerDalton(int x, int y, string name)
         {
             Dalton dalton = new Dalton(x, y, name);
             this.occuperCase(x, y, dalton.signe);
@@ -300,18 +300,18 @@ namespace Labynov
             this.creerDalton(coordX, coordY, "Williams");
         }
         //On créer notre héros
-        public void creerRantanplan(int x, int y, int vies, int faim , int obeissance)
+        public void creerRantanplan(int x, int y, int vies, int faim, int obeissance)
         {
-            this.rantanplan = new Rantanplan(x, y , vies, faim, obeissance);
+            this.rantanplan = new Rantanplan(x, y, vies, faim, obeissance);
             this.occuperCase(x, y, rantanplan.signe);
         }
-       /**
-        * 
-        *       Fonctions Actions PERSONNAGE/MAP
-        * 
-        */
+        /**
+         * 
+         *       Fonctions Actions PERSONNAGE/MAP
+         * 
+         */
 
-        public void CreuseOuStopDalton(string direction, int x , int y , int indexDalton)
+        public void CreuseOuStopDalton(string direction, int x, int y, int indexDalton)
         {
             //On vérifie la possibilité d'avancer dans cette direction
             switch (direction)
@@ -319,7 +319,7 @@ namespace Labynov
                 case "N":
                     {
                         // Vérification hors map Nord
-                        if(y > 3)
+                        if (y > 3)
                         {
                             //Vérification du passage Nord (pas de coup de pioche entre les personnages )
                             if (this.sousSol[this.convertCoordonneeToIndex(x, y) - this.sizeX].occupePar == "X" || this.sousSol[this.convertCoordonneeToIndex(x, y) - this.sizeX].occupePar == " " &&
@@ -352,7 +352,7 @@ namespace Labynov
                 case "S":
                     {
                         // Vérification hors map Sud
-                        if ( y < this.sizeY - 3)
+                        if (y < this.sizeY - 3)
                         {
                             //Vérification du passage Sud
                             if (this.sousSol[this.convertCoordonneeToIndex(x, y) + this.sizeX].occupePar == "X" || this.sousSol[this.convertCoordonneeToIndex(x, y) + this.sizeX].occupePar == " " &&
@@ -514,7 +514,7 @@ namespace Labynov
                 case "E":
                     {
                         // Vérification hors map Est
-                        if (x < this.sizeX -3)
+                        if (x < this.sizeX - 3)
                         {
                             //Vérification du passage Est
                             if (this.sousSol[this.convertCoordonneeToIndex(x, y) + 1].occupePar == "X" || this.sousSol[this.convertCoordonneeToIndex(x, y) + 1].occupePar == " " &&
@@ -605,7 +605,7 @@ namespace Labynov
                 //Dans le cas de la nourriture d'avrel
                 this.sentLeManger(x, y, odeur);
                 //newDirectionsOdeur = this.continueOdeurNourriture(x, y, odeur);
-                if(this.continueOdeurNourriture(x, y, odeur).Count > 0)
+                if (this.continueOdeurNourriture(x, y, odeur).Count > 0)
                 {
                     foreach (string direction in this.continueOdeurNourriture(x, y, odeur))
                     {
@@ -636,7 +636,7 @@ namespace Labynov
                         }
                     }
                 }
-                
+
             }
             //Dans le cas de l'odeur des pieds des dalton
             this.sentLeDalton(x, y, odeur);
@@ -674,11 +674,11 @@ namespace Labynov
             }
         }
         //Fonction pour savoir où propager l'odeur du dalton
-        public List<string> continueOdeurDalton(int x , int y , int odeur)
+        public List<string> continueOdeurDalton(int x, int y, int odeur)
         {
             List<string> directionsOdeur = new List<string>();
             //On test si là case Nord
-            if (this.estLibreNord(x,y) && this.sousSol[this.convertCoordonneeToIndex(x, y - 1)].odeurDePieds < odeur-1)
+            if (this.estLibreNord(x, y) && this.sousSol[this.convertCoordonneeToIndex(x, y - 1)].odeurDePieds < odeur - 1)
             {
                 directionsOdeur.Add("N");
             }
@@ -686,7 +686,7 @@ namespace Labynov
             {
                 directionsOdeur.Add("S");
             }
-            if (this.estLibreEst(x, y) && this.sousSol[this.convertCoordonneeToIndex(x + 1 , y)].odeurDePieds < odeur - 1)
+            if (this.estLibreEst(x, y) && this.sousSol[this.convertCoordonneeToIndex(x + 1, y)].odeurDePieds < odeur - 1)
             {
                 directionsOdeur.Add("E");
             }
@@ -724,15 +724,15 @@ namespace Labynov
          *      Fonctions IA de Rantanplan
          * 
          */
-         public string startRantanplan()
+        public string startRantanplan()
         {
             //On reste dans la boucle de recherche de Rantanplan tant qu'il n'a pas trouvé Avrel et n'est pas mort
-            
-            while(!this.rantanplan.trouveAvrel && !this.perdu)
+
+            while (!this.rantanplan.trouveAvrel && !this.perdu)
             {
                 //On relève les direction possible de son déplacement , ainsi que la présence de dalton autour de rantanplan
                 this.setDirectionPossibleRantanplan();
-                if(this.rantanplan.trouveAvrel)
+                if (this.rantanplan.trouveAvrel)
                 {
                     return "Bien Joué Rantanplan \n";
                 }
@@ -760,25 +760,27 @@ namespace Labynov
         {
             this.directions.Clear();
             //On test le Nord
-            if(this.estLibreNord(this.rantanplan.x, this.rantanplan.y)){
+            if (this.estLibreNord(this.rantanplan.x, this.rantanplan.y))
+            {
                 this.directions.Add("N");
             }
-            else if (this.estDansSousSol(this.convertCoordonneeToIndex(this.rantanplan.x,this.rantanplan.y - 1)))
+            else if (this.estDansSousSol(this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)))
             {
                 //Si la case est dans la map , on check si il y a un dalton dessus
-                if(this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].occupePar == "O")
+                if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].occupePar == "O")
                 {
                     //Si c'est Avrel c'est gagné
                     this.rantanplan.trouveAvrel = true;
                 }
-                else if(this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].occupePar == "o")
+                else if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].occupePar == "o")
                 {
                     //Sinon c'est balo
                     this.perdu = this.rantanplan.perdreUneVieEtMeurt();
                 }
             }
             //On test le sud
-            if (this.estLibreSud(this.rantanplan.x, this.rantanplan.y)){
+            if (this.estLibreSud(this.rantanplan.x, this.rantanplan.y))
+            {
                 this.directions.Add("S");
             }
             else if (this.estDansSousSol(this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y + 1)))
@@ -796,7 +798,8 @@ namespace Labynov
                 }
             }
             //On test le sud
-            if (this.estLibreEst(this.rantanplan.x, this.rantanplan.y)){
+            if (this.estLibreEst(this.rantanplan.x, this.rantanplan.y))
+            {
                 this.directions.Add("E");
             }
             else if (this.estDansSousSol(this.convertCoordonneeToIndex(this.rantanplan.x + 1, this.rantanplan.y)))
@@ -814,7 +817,8 @@ namespace Labynov
                 }
             }
             //On test le sud
-            if (this.estLibreOuest(this.rantanplan.x, this.rantanplan.y)){
+            if (this.estLibreOuest(this.rantanplan.x, this.rantanplan.y))
+            {
                 this.directions.Add("O");
             }
             else if (this.estDansSousSol(this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)))
@@ -845,7 +849,7 @@ namespace Labynov
                     case "N":
                         {
                             //Si la case pue plus les pieds que les autres observé alors on note le record et la direction
-                            if(this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].odeurDePieds > this.rantanplan.ptsRecordPied)
+                            if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].odeurDePieds > this.rantanplan.ptsRecordPied)
                             {
                                 this.rantanplan.ptsRecordPied = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].odeurDePieds;
                                 this.rantanplan.choixRecordPied = direction;
@@ -879,13 +883,13 @@ namespace Labynov
                             //Si la case pue plus les pieds que les autres observé alors on note le record et la direction
                             if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x + 1, this.rantanplan.y)].odeurDePieds > this.rantanplan.ptsRecordPied)
                             {
-                                this.rantanplan.ptsRecordPied = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x +1, this.rantanplan.y)].odeurDePieds;
+                                this.rantanplan.ptsRecordPied = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x + 1, this.rantanplan.y)].odeurDePieds;
                                 this.rantanplan.choixRecordPied = direction;
                             }
                             //Si la case pue plus la bouffe que les autres observé alors on note le record et la direction
                             if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x + 1, this.rantanplan.y)].odeurDeCuisine > this.rantanplan.ptsRecordNourriture)
                             {
-                                this.rantanplan.ptsRecordNourriture = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x +1, this.rantanplan.y + 1)].odeurDeCuisine;
+                                this.rantanplan.ptsRecordNourriture = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x + 1, this.rantanplan.y + 1)].odeurDeCuisine;
                                 this.rantanplan.choixRecordNourriture = direction;
                             }
                         }
@@ -895,13 +899,13 @@ namespace Labynov
                             //Si la case pue plus les pieds que les autres observé alors on note le record et la direction
                             if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x - 1, this.rantanplan.y)].odeurDePieds > this.rantanplan.ptsRecordPied)
                             {
-                                this.rantanplan.ptsRecordPied = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x -1, this.rantanplan.y)].odeurDePieds;
+                                this.rantanplan.ptsRecordPied = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x - 1, this.rantanplan.y)].odeurDePieds;
                                 this.rantanplan.choixRecordPied = direction;
                             }
                             //Si la case pue plus la bouffe que les autres observé alors on note le record et la direction
-                            if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x -1, this.rantanplan.y)].odeurDeCuisine > this.rantanplan.ptsRecordNourriture)
+                            if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x - 1, this.rantanplan.y)].odeurDeCuisine > this.rantanplan.ptsRecordNourriture)
                             {
-                                this.rantanplan.ptsRecordNourriture = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x -1, this.rantanplan.y)].odeurDeCuisine;
+                                this.rantanplan.ptsRecordNourriture = this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x - 1, this.rantanplan.y)].odeurDeCuisine;
                                 this.rantanplan.choixRecordNourriture = direction;
                             }
                         }
@@ -911,13 +915,14 @@ namespace Labynov
         }
         public bool suivreSonEstomac()
         {
-            if(this.rantanplan.inteligent && this.rantanplan.vies < this.rantanplan.viesMax)
+            if (this.rantanplan.inteligent && this.rantanplan.vies < this.rantanplan.viesMax)
             {
                 //S'il s'est déjà fait cogné et apprend de ses erreur il va naturellement suivre l'odeur de nourriture
                 return true;
             }
             // Sinon il reste tiraillé entre son estomac et son dressage comme un bon clebar
-            if(this.random.Next(this.rantanplan.obeissance ) > this.random.Next(this.rantanplan.faim)){
+            if (this.random.Next(this.rantanplan.obeissance) > this.random.Next(this.rantanplan.faim))
+            {
                 //On fait entrée en jeu les paramètre courant du conditionnement de rantanplan
                 return false;
             }
@@ -925,6 +930,7 @@ namespace Labynov
         }
         public void deplacerRantanplan(string direction)
         {
+            //Indicateur du chemin de Rantanplan
             switch (direction)
             {
                 case "N":
