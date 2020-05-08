@@ -44,7 +44,7 @@ namespace Labynov
             {
                 this.obeissance = 0;
             }
-            if (this.vies == 0)
+            if (this.vies <= 0)
             {
                 return true;
             }

@@ -22,8 +22,17 @@ namespace Labynov
             try
             {
                 this.viesRantanplan = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Rantanplan part donc avec {0} vies .",
+                if (this.viesRantanplan <= 1)
+                {
+                    //on gere le cas de la division par 0
+                    this.viesRantanplan = 1;
+                    Console.WriteLine("Rantanplan part donc avec 1 vie .");
+                }
+                else
+                {
+                    Console.WriteLine("Rantanplan part donc avec {0} vies .",
                                   this.viesRantanplan);
+                }
             }
             catch (FormatException)
             {

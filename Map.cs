@@ -740,6 +740,7 @@ namespace Labynov
                 {
                     return "Rantanplan s'est fait battre par les méchants Daltons \n";
                 }
+
                 //Parmis ces direction on sélectionne celles qui sente le plus fort
                 this.choixDirectionPossible();
                 //On empèche les demi-tour
