@@ -580,11 +580,11 @@ namespace Labynov
             //On utilise la fonction suivante pour remplir de toute les directions this.directions
             this.antiDemiTour("");
             List<string> directionsOdeur = this.directions;
+            this.propagationOdeur(this.avrel.x, this.avrel.y, this.avrel.odeurDeCuisine, true, directionsOdeur);
             foreach (Dalton dalton in this.mechants)
             {
                 this.propagationOdeur(dalton.x, dalton.y, dalton.odeurDePied, false, directionsOdeur);
             }
-            this.propagationOdeur(this.avrel.x, this.avrel.y, this.avrel.odeurDeCuisine, true, directionsOdeur);
         }
         //Fonction pour répendre l'odeur du Dalton
         public void sentLeDalton(int x, int y, int odeur)
@@ -760,7 +760,7 @@ namespace Labynov
         {
             this.directions.Clear();
             //On test le Nord
-            if (this.estLibreNord(this.rantanplan.x, this.rantanplan.y))
+            if (this.estLibreNord(this.rantanplan.x, this.rantanplan.y) || this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)].occupePar == "R")
             {
                 this.directions.Add("N");
             }
@@ -779,7 +779,7 @@ namespace Labynov
                 }
             }
             //On test le sud
-            if (this.estLibreSud(this.rantanplan.x, this.rantanplan.y))
+            if (this.estLibreSud(this.rantanplan.x, this.rantanplan.y) || this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y + 1)].occupePar == "R")
             {
                 this.directions.Add("S");
             }
@@ -798,7 +798,7 @@ namespace Labynov
                 }
             }
             //On test le sud
-            if (this.estLibreEst(this.rantanplan.x, this.rantanplan.y))
+            if (this.estLibreEst(this.rantanplan.x, this.rantanplan.y) || this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x +1 , this.rantanplan.y)].occupePar == "R")
             {
                 this.directions.Add("E");
             }
@@ -821,7 +821,7 @@ namespace Labynov
             {
                 this.directions.Add("O");
             }
-            else if (this.estDansSousSol(this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)))
+            else if (this.estDansSousSol(this.convertCoordonneeToIndex(this.rantanplan.x, this.rantanplan.y - 1)) || this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x -1, this.rantanplan.y)].occupePar == "R")
             {
                 //Si la case est dans la map , on check si il y a un dalton dessus
                 if (this.sousSol[this.convertCoordonneeToIndex(this.rantanplan.x - 1, this.rantanplan.y)].occupePar == "O")
