@@ -52,7 +52,7 @@ namespace Labynov
             catch (FormatException)
             {
                 this.niveauDeFaim = 50;
-                Console.WriteLine("La valeurs par défaut du niveau de faim est 0.");
+                Console.WriteLine("La valeurs par défaut du niveau de faim est 50.");
             }
             return new Map(50, 50, this.viesRantanplan, this.niveauDeFaim, this.niveauDeDressage);
         }
