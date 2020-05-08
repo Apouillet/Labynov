@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labynov", "Labynov.csproj", "{8C7B7652-27C5-4EA8-B380-B95F37DBD7A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C7B7652-27C5-4EA8-B380-B95F37DBD7A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7B7652-27C5-4EA8-B380-B95F37DBD7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7B7652-27C5-4EA8-B380-B95F37DBD7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7B7652-27C5-4EA8-B380-B95F37DBD7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0914B75E-2A31-467A-9E71-8616706E2A30}
+	EndGlobalSection
+EndGlobal
