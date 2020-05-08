@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Labynov
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Map plateauJeu = new Map(50, 50, 3, 50, 0);
+            Initializer init = new Initializer();
+            Map plateauJeu = init.startMenu();
             plateauJeu.toString();
             plateauJeu.creuserGalleries();
             plateauJeu.odeurInit();
