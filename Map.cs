@@ -734,16 +734,16 @@ namespace Labynov
                 this.setDirectionPossibleRantanplan();
                 if(this.rantanplan.trouveAvrel)
                 {
-                    return "Bien Joué Rantanplan";
+                    return "Bien Joué Rantanplan \n";
                 }
                 if (this.perdu)
                 {
-                    return "Rantanplan s'est fait battre par les méchants Daltons";
+                    return "Rantanplan s'est fait battre par les méchants Daltons \n";
                 }
                 //Parmis ces direction on sélectionne celles qui sente le plus fort
                 this.choixDirectionPossible();
                 //On empèche les demi-tour
-                this.directions.Remove(this.rantanplan.provenance);
+                //this.directions.Remove(this.rantanplan.provenance);
                 //Maintenant l'éducation de rantanplan et son état courant interviennent dans le choix 
                 if (this.suivreSonEstomac())
                 {
@@ -754,7 +754,7 @@ namespace Labynov
                     this.deplacerRantanplan(this.rantanplan.choixRecordPied);
                 }
             }
-            return "Relance donc une partie";
+            return "Relance donc une partie \n";
         }
         public void setDirectionPossibleRantanplan()
         {
@@ -917,7 +917,7 @@ namespace Labynov
                 return true;
             }
             // Sinon il reste tiraillé entre son estomac et son dressage comme un bon clebar
-            if(this.random.Next(this.rantanplan.obeissance + this.rantanplan.faim) >= this.rantanplan.faim){
+            if(this.random.Next(this.rantanplan.obeissance ) > this.random.Next(this.rantanplan.faim)){
                 //On fait entrée en jeu les paramètre courant du conditionnement de rantanplan
                 return false;
             }
