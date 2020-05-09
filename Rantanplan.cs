@@ -33,8 +33,8 @@ namespace Labynov
         {
             Console.WriteLine("Kaï Kaï ! \n");
             this.vies -= 1;
-            this.faim += (this.obeissance + this.faim) / (2 * this.viesMax);
-            this.obeissance -= (this.obeissance + this.faim) / (2 * this.viesMax);
+            this.faim += (this.obeissance + this.faim) / 2;
+            this.obeissance -= (this.obeissance + this.faim) / 2;
             if (inteligent)
             {
                 this.obeissance = 0;

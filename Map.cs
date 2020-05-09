@@ -677,19 +677,22 @@ namespace Labynov
         public List<string> continueOdeurDalton(int x, int y, int odeur)
         {
             List<string> directionsOdeur = new List<string>();
-            //On test si là case Nord
+            //On test si là case Nord est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreNord(x, y) && this.sousSol[this.convertCoordonneeToIndex(x, y - 1)].odeurDePieds < odeur - 1)
             {
                 directionsOdeur.Add("N");
             }
+            //On test si là case Sud est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreSud(x, y) && this.sousSol[this.convertCoordonneeToIndex(x, y + 1)].odeurDePieds < odeur - 1)
             {
                 directionsOdeur.Add("S");
             }
+            //On test si là case Est est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreEst(x, y) && this.sousSol[this.convertCoordonneeToIndex(x + 1, y)].odeurDePieds < odeur - 1)
             {
                 directionsOdeur.Add("E");
             }
+            //On test si là case Ouest est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreOuest(x, y) && this.sousSol[this.convertCoordonneeToIndex(x - 1, y)].odeurDePieds < odeur - 1)
             {
                 directionsOdeur.Add("O");
@@ -700,19 +703,22 @@ namespace Labynov
         public List<string> continueOdeurNourriture(int x, int y, int odeur)
         {
             List<string> directionsOdeur = new List<string>();
-            //On test si là case Nord
+            //On test si là case Nord est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreNord(x, y) && this.sousSol[this.convertCoordonneeToIndex(x, y - 1)].odeurDeCuisine < odeur - 1)
             {
                 directionsOdeur.Add("N");
             }
+            //On test si là case Sub est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreSud(x, y) && this.sousSol[this.convertCoordonneeToIndex(x, y + 1)].odeurDeCuisine < odeur - 1)
             {
                 directionsOdeur.Add("S");
             }
+            //On test si là case Est est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreEst(x, y) && this.sousSol[this.convertCoordonneeToIndex(x + 1, y)].odeurDeCuisine < odeur - 1)
             {
                 directionsOdeur.Add("E");
             }
+            //On test si là case Ouest est libre et si l'odeur présente à cette endroit est plus faible
             if (this.estLibreOuest(x, y) && this.sousSol[this.convertCoordonneeToIndex(x - 1, y)].odeurDeCuisine < odeur - 1)
             {
                 directionsOdeur.Add("O");
@@ -922,7 +928,7 @@ namespace Labynov
                 return true;
             }
             // Sinon il reste tiraillé entre son estomac et son dressage comme un bon clebar
-            if (this.random.Next(this.rantanplan.obeissance) > this.random.Next(this.rantanplan.faim))
+            if (/*this.random.Next*/(this.rantanplan.obeissance) > /*this.random.Next*/(this.rantanplan.faim))
             {
                 //On fait entrée en jeu les paramètre courant du conditionnement de rantanplan
                 return false;
