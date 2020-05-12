@@ -783,6 +783,8 @@ namespace Labynov
                 {
                     //Sinon c'est balo
                     this.perdu = this.rantanplan.perdreUneVieEtMeurt();
+                    //Rantanplan s'échappe
+                    this.demiTourRantanplan();
                 }
             }
             //On test le sud
@@ -802,6 +804,8 @@ namespace Labynov
                 {
                     //Sinon c'est balo
                     this.perdu = this.rantanplan.perdreUneVieEtMeurt();
+                    //Rantanplan s'échappe
+                    this.demiTourRantanplan();
                 }
             }
             //On test le sud
@@ -821,6 +825,8 @@ namespace Labynov
                 {
                     //Sinon c'est balo
                     this.perdu = this.rantanplan.perdreUneVieEtMeurt();
+                    //Rantanplan s'échappe
+                    this.demiTourRantanplan();
                 }
             }
             //On test le sud
@@ -840,6 +846,8 @@ namespace Labynov
                 {
                     //Sinon c'est balo
                     this.perdu = this.rantanplan.perdreUneVieEtMeurt();
+                    //Rantanplan s'échappe
+                    this.demiTourRantanplan();
                 }
             }
         }
@@ -934,6 +942,11 @@ namespace Labynov
                 return false;
             }
             return true;
+        }
+        public void demiTourRantanplan()
+        {
+            //Rantanplan revients d'où il vient
+            this.deplacerRantanplan(this.rantanplan.provenance);
         }
         public void deplacerRantanplan(string direction)
         {
